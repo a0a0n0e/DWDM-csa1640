@@ -1,0 +1,10 @@
+# Load the dataset
+diabetes <- read.csv("diabetes.csv")
+
+# Linear Regression
+linear_model <- lm(BloodPressure ~ Age, data = diabetes)
+summary(linear_model)
+
+# Multiple Regression
+multiple_model <- lm(BloodPressure ~ Age + BMI + Insulin, data = diabetes)
+summary(multiple_model)
