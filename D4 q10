@@ -1,0 +1,11 @@
+# Sample data
+data <- data.frame(
+  EmployeID = c(111, 222, 333, 444, 555, 666),
+  Gender = c("Male", "Male", "Female", "Female", "Male", "Male"),
+  Age = c(28, 25, 26, 25, 29, 30),
+  Salary = c(150000, 150000, 160000, 160000, 170000, 200000),
+  Credit = c(39, 27, 42, 40, 64, 72)
+)
+
+# Write the data to an ARFF file
+write.arff(data, file = "employees.arff")
