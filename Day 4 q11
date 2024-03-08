@@ -1,0 +1,17 @@
+# Marks data
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+
+# Determine breaks for equal-frequency partitioning
+breaks_ef <- quantile(marks, probs = seq(0, 1, by = 1/3))
+
+# Create histogram
+hist(marks, breaks = breaks_ef, main = "Histogram - Equal-Frequency Partitioning", xlab = "Marks", ylab = "Frequency")# Determine breaks for equal-width partitioning
+breaks_ew <- seq(min(marks), max(marks), length.out = 4)
+
+# Create histogram
+hist(marks, breaks = breaks_ew, main = "Histogram - Equal-Width Partitioning", xlab = "Marks", ylab = "Frequency")# Perform clustering to determine breaks
+kmeans_result <- kmeans(matrix(marks), centers = 3)
+breaks_cluster <- sort(kmeans_result$centers)
+
+# Create histogram
+hist(marks, breaks = breaks_cluster, main = "Histogram - Clustering", xlab = "Marks", ylab = "Frequency")
