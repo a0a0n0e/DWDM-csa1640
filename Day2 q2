@@ -1,0 +1,14 @@
+# Load required library
+library(arules)
+
+# Convert transactions to binary format
+trans_bin <- as(transactions, "transactions")
+
+# Generate frequent itemsets using FP-Growth
+frequent_itemsets <- fpgrowth(trans_bin, support = 0.3)
+
+# Generate association rules from frequent itemsets
+rules <- ruleInduction(frequent_itemsets, confidence = 0.5)
+
+# Display rules
+inspect(rules)
