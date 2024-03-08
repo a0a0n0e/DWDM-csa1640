@@ -1,0 +1,23 @@
+# Load required library
+library(arules)
+
+# Create transactions
+transactions <- list(
+  c("Bread", "Cheese", "Egg", "Juice"),
+  c("Bread", "Cheese", "Juice"),
+  c("Bread", "Milk", "Yogurt"),
+  c("Bread", "Juice", "Milk"),
+  c("Cheese", "Juice", "Milk")
+)
+
+# Convert transactions to binary format
+trans_bin <- as(transactions, "transactions")
+
+# Generate frequent itemsets using FP-Growth
+frequent_itemsets <- fpgrowth(trans_bin, support = 0.5)
+
+# Generate association rules from frequent itemsets
+rules <- ruleInduction(frequent_itemsets, confidence = 0.75)
+
+# Display rules
+inspect(rules)
