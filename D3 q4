@@ -1,0 +1,11 @@
+@relation Transactions
+@attribute Transaction_ID {T1, T2, T3, T4, T5, T6}
+@attribute Items {Hot_Dogs, Buns, Ketchup, Coke, Chips}
+
+@data
+T1, Hot_Dogs, Buns, Ketchup
+T2, Hot_Dogs, Buns
+T3, Hot_Dogs, Coke, Chips
+T4, Chips, Coke, Ketchup
+T5, Hot_Dogs, Coke, Chips
+T6, Chips, Coke
