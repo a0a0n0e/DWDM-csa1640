@@ -1,0 +1,21 @@
+# Load required library
+library(cluster)
+
+# Create dataset
+customer_data <- data.frame(
+  CustomerID = c(1, 2, 3, 4, 5),
+  Gender = c("Male", "Female", "Male", "Female", "Male"),
+  Age = c(19, 31, 35, 40, 25),
+  Annual_Income = c(15, 17, 20, 25, 30),
+  Spending_Score = c(39, 40, 35, 45, 50)
+)
+
+# Perform clustering analysis
+cluster_result <- kmeans(customer_data[, c("Annual_Income", "Spending_Score")], centers = 5)
+
+# Print cluster centers
+print(cluster_result$centers)
+
+# Plot clusters
+plot(customer_data$Annual_Income, customer_data$Spending_Score, col = cluster_result$cluster, pch = 19, main = "Customer Segmentation", xlab = "Annual Income", ylab = "Spending Score")
+points(cluster_result$centers[, 1], cluster_result$centers[, 2], col = 1:5, pch = 8, cex = 2)
