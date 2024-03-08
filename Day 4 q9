@@ -1,0 +1,6 @@
+# Perform clustering to determine breaks
+kmeans_result <- kmeans(matrix(marks), centers = 3)
+breaks_cluster <- sort(kmeans_result$centers)
+
+# Create histogram
+hist(marks, breaks = breaks_cluster, main = "Histogram - Clustering", xlab = "Marks", ylab = "Frequency")
