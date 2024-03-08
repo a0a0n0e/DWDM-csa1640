@@ -1,0 +1,22 @@
+# Load required library
+library(arules)
+
+# Define transactions
+transactions <- list(
+    c("a", "b", "c", "e"),
+    c("a", "b", "d", "e"),
+    c("a", "c", "d", "e"),
+    c("b", "c", "d", "e"),
+    c("b", "d", "e"),
+    c("a", "d", "e"),
+    c("a", "b", "e")
+)
+
+# Convert transactions to binary format
+trans_bin <- as(transactions, "transactions")
+
+# Generate association rules
+rules <- apriori(trans_bin, parameter = list(support = 0.3, confidence = 0.5))
+
+# Display rules
+inspect(rules)
