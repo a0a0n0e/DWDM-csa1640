@@ -1,0 +1,7 @@
+Vegetarian: Gopal, Krishna, Malini, Hema, Anu
+Non-Vegetarian: Gopu, Babu, Baby, Jai, Dev# Data
+phones_sold <- c(4, 12, 5, 7, 10, 13, 19, 31, 2, 7, 50, 25, 90, 36)
+money <- c(2, 7, 50, 25, 90, 36, 153, 72, 275, 110, 5, 7, 10, 13)
+
+# Scatter plot
+plot(phones_sold, money, xlab = "Number of Mobile Phones Sold", ylab = "Money", main = "Scatter Plot of Phones Sold vs Money")
