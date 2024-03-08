@@ -1,0 +1,8 @@
+# Strike-rates data
+strike_rates <- c(100, 70, 60, 90, 90)
+
+# Min-max normalization
+strike_rates_minmax <- (strike_rates - min(strike_rates)) / (max(strike_rates) - min(strike_rates))
+
+# Z-score normalization
+strike_rates_zscore <- (strike_rates - mean(strike_rates)) / sd(strike_rates)
